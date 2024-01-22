@@ -41,7 +41,7 @@ public class DummyAPI implements HttpHandler {
             else
             {
                 Files.write(file.toPath(), body.get("content").getBytes(), StandardOpenOption.CREATE);
-                exchange.sendResponseHeaders(200, 0);    
+                content = "{ success: \"File created!\" }";
             }
         }
         else if ("PUT".equals(exchange.getRequestMethod()))
